@@ -8,11 +8,11 @@ Una de las novedades que ofrece esta aplicación es la posibilidad de integrar c
 
 > Se recomienda instalar con Docker/Docker compose. [^1]
 
-[^1]: Archivo `docker-compose.yml` TODO: crear repositorio.
+[^1]: [Archivo `docker-compose.yml`](./docker-compose.yml)
 
 ### 2. Flujo n8n para vectorizar y almacenar documentación.
 
-![image](https://hackmd.io/_uploads/B1EkOlrJxl.png)
+![image](./public/flujo.png)
 
 El flujo que se muestra comienza con un `trigger` en la carpeta `/home/files` de nuestro contenedor, esto quiere decir que cada vez que se añada o actualice uno de sus ficheros, se ejecutará el workflow.
 
@@ -34,12 +34,12 @@ Por último, todo pasa a la base de datos vectorial para ser vectorizado y almac
 
 ### 3. Nodos de creación de tablas.
 Estos nodos deben ser ejecutados si la base de datos no tiene las tablas `document_metadata` o `document_rows`
-![image](https://hackmd.io/_uploads/S1wM3xHkge.png)
+![image](./public/tablas.png)
 
 ### 4. Agente IA
 
 Este sería el flujo principal del agente:
-![image](https://hackmd.io/_uploads/S1z0nxB1xx.png)
+![image](./public/agente.png)
 
 El flujo lo activa o bien un chat de prueba de n8n o un nodo webhook que está conectado a nuestra interfaz de Open WebUI, en este caso, le sigue un nodo `IF` para comprobar si la petición tiene un `SessionID`, en caso de tenerlo el flujo va al agente, pero en caso de no tenerlo, significa que OpenWebUI está haciendo una petición para generar etiquetas o el nombre de la conversación como comentamos anteriormente, asique debe ir al nodo correspondiente a tratar esa petición y devolverla correctamente. 
 
@@ -47,7 +47,7 @@ El flujo lo activa o bien un chat de prueba de n8n o un nodo webhook que está c
 > El modelo local usado para el chat es `qwen2.5:7b-instruct-q4_K_M.`[^2]
 
 [^2]: Se puede modificar este modelo para que permita más tokens, ya que el flujo requiere de bastantes con estos dos comandos:
-![image](https://hackmd.io/_uploads/B10HV-H1lx.png)
+![image](./public/comandos-modelo.png)
 
 
 - 4.1. Herramientas y características del Agente.
@@ -61,7 +61,7 @@ usa esta herramienta para consultar la tabla `document_rows` una vez que sabe el
 -- **RAG:**
 Esta herramienta es la más sencilla de configurar si todo funciona correctamente ya que solo tenemos que pasarle el nombre de la tabla donde tiene vectorizada toda la información y decirle a nuestro agente que su base de conocimiento es esta. Por último le anidamos un modelo de embeddings para que sea capaz de extraer la información vectorizada y pasarsela a nuestro agente.
 
-![image](https://hackmd.io/_uploads/rJX7lZSylg.png)
+![image](./public/addons.png)
 
 
 ### TODO: Añadir información del MCP Server que se desarrolle
