@@ -8,7 +8,7 @@ Una de las novedades que ofrece esta aplicación es la posibilidad de integrar c
 
 > Se recomienda instalar con Docker/Docker compose. [^1]
 
-[^1]: [Archivo `docker-compose.yml`](./docker-compose.yml)
+[^1]: Archivo `docker-compose.yml`
 
 ### 2. Flujo n8n para vectorizar y almacenar documentación.
 
