@@ -52,13 +52,13 @@ El flujo lo activa o bien un chat de prueba de n8n o un nodo webhook que está c
 
 - 4.1. Herramientas y características del Agente.
 El flujo cuenta con varios modelos de IA diferentes, en este caso para hacer pruebas tengo OpenAI y Ollama; una memoria en base de datos SQL que guarda la información y los mensajes de cada interacción con el chat; Un set de herramientas SQL para facilitar el acceso a los archivos:
--- **List Documents:**
+  - **List Documents:**
 La primera de las herramientas consiste en hacer un select a nuestra tabla de `documents_metadata`
--- **Get File Documents:**
+  - **Get File Documents:**
 Esta herramienta recoge el contenido de un archivo según el id de la tabla `documents_pg`.
--- **Query Document row**
+  - **Query Document row**
 usa esta herramienta para consultar la tabla `document_rows` una vez que sabe el `id` del archivo. El `dataset_id` es el mismo que el `file_id`, y siempre usa la columna `row_data` para filtrar, ya que es un campo jsonb que contiene todas las claves del esquema del archivo, según la tabla `document_metadata`.
--- **RAG:**
+  - **RAG:**
 Esta herramienta es la más sencilla de configurar si todo funciona correctamente ya que solo tenemos que pasarle el nombre de la tabla donde tiene vectorizada toda la información y decirle a nuestro agente que su base de conocimiento es esta. Por último le anidamos un modelo de embeddings para que sea capaz de extraer la información vectorizada y pasarsela a nuestro agente.
 
 ![image](./public/addons.png)
