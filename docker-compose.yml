@@ -1,0 +1,71 @@
+services:
+  n8n:
+    container_name: n8n-container
+    image: n8nio/n8n:latest
+    ports: 
+      - "5678:5678"
+    networks:
+      - n8n-network
+    volumes:
+      - n8n-data:/root/.n8n
+
+  ollama:
+    container_name: ollama-container
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - n8n-network
+
+  postgres:
+    container_name: postgres-container
+    image: pgvector/pgvector:0.8.0-pg17
+    environment:
+      POSTGRES_USER: david
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: n8n_db
+    ports: 
+      - "5432:5432"
+    networks:
+      - n8n-network
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  qdrant:
+    container_name: qdrant-container
+    image: qdrant/qdrant:latest
+    ports: 
+      - "6333:6333"
+    networks:
+      - n8n-network
+    volumes:
+      - qdrant-data:/qdrant/storage
+
+  openwebui:
+    container_name: openwebui
+    image: ghcr.io/open-webui/open-webui:main
+    ports:
+      - "3000:8080"
+    networks:
+      - n8n-network
+    volumes:
+      - openwebui-data:/app/backend/data
+    restart: unless-stopped
+
+networks:
+  n8n-network:
+    driver: bridge
+
+volumes:
+  n8n-data:
+    external: true
+    name: n8n-compose_n8n-data
+  postgres-data:
+    external: true
+    name: n8n-compose_postgres-data
+  qdrant-data:
+    external: true
+    name: n8n-compose_qdrant-data
+  openwebui-data:
+    external: true
+    name: n8n-compose_openwebui-data

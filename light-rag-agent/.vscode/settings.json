@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./LightRAG/super-basic-",
+        "./LightRAG"
+    ]
+}
