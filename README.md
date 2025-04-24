@@ -1,4 +1,4 @@
-# Agente IA para documentación (Con RAG)
+# Agente IA para documentación (Con RAG y MCP servers)
 
 ### 1. Interfaz con OpenWebUI.
 
