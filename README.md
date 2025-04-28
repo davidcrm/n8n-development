@@ -47,7 +47,7 @@ El flujo lo activa o bien un chat de prueba de n8n o un nodo webhook que está c
 > El modelo local usado para el chat es `qwen2.5:7b-instruct-q4_K_M.`[^2]
 
 [^2]: Se puede modificar este modelo para que permita más tokens, ya que el flujo requiere de bastantes con estos dos comandos:
-![image](./public/comandos-modelo.png)
+
 
 
 - 4.1. Herramientas y características del Agente.
