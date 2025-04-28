@@ -14,7 +14,7 @@
         -660,
         520
       ],
-      "id": "562f7a46-133c-4675-afcc-14fa5bd55c2d",
+      "id": "38518254-a8e9-4ca2-a4ab-be1c08bc439d",
       "name": "Sticky Note"
     },
     {
@@ -30,7 +30,7 @@
         -340,
         520
       ],
-      "id": "7a2fd580-46a1-471b-93b6-3acf06a380a8",
+      "id": "ce67c976-5675-490f-b363-ed3262e8a153",
       "name": "Sticky Note1"
     },
     {
@@ -46,7 +46,7 @@
         -680,
         420
       ],
-      "id": "688f003d-1a41-4f11-8ed9-c089c21b9bec",
+      "id": "de87fe94-acac-4a4f-9de7-631cc58a997e",
       "name": "Sticky Note2"
     },
     {
@@ -61,11 +61,11 @@
         -600,
         680
       ],
-      "id": "f78c1cb3-45c8-4b64-81cf-068c8a5b664f",
+      "id": "92ddded7-b0a0-4dc3-8d1b-840857554392",
       "name": "Create Document Metadata Table",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       },
@@ -83,11 +83,11 @@
         -260,
         680
       ],
-      "id": "56b7a336-49db-41e1-9c9c-8d9544521081",
+      "id": "c85274ce-8df9-490e-aab5-59a91819a382",
       "name": "Create Document Rows Table (for Tabular Data)",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       },
@@ -103,7 +103,7 @@
         -440,
         1040
       ],
-      "id": "dfbc309c-1d3b-48ae-98f3-8791e7fc7382",
+      "id": "a0d2b27c-126e-41d5-a690-f5a0a90ae74c",
       "name": "Loop Over Items"
     },
     {
@@ -138,7 +138,7 @@
         -280,
         1120
       ],
-      "id": "38b45f3c-cb1d-47c3-a04e-23ee8576b0ed",
+      "id": "d81af4cf-6b86-47c4-a4c2-f6e6d0f10cc3",
       "name": "Set File ID"
     },
     {
@@ -155,11 +155,11 @@
         -100,
         1040
       ],
-      "id": "b6101912-3373-431d-8463-26e20d808e84",
+      "id": "dc502ebb-d651-48a5-b40c-6162d245bcdd",
       "name": "Delete Old Documents Records",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -178,11 +178,11 @@
         80,
         1120
       ],
-      "id": "6568a65c-c69b-4161-a89e-d978e5d168a5",
+      "id": "24256038-aeef-46bd-aa5f-75a9341585a8",
       "name": "Delete Old Data Records",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -260,11 +260,11 @@
         260,
         1040
       ],
-      "id": "660f4c3b-ee70-4ddf-a68b-8868a4311f49",
+      "id": "78798d51-8dde-4a64-a154-e166c40b6e66",
       "name": "Insert Document MetaData",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -285,7 +285,7 @@
         -640,
         1040
       ],
-      "id": "500eed4b-702a-41d8-bfc2-fb36aa0707af",
+      "id": "0b5d173e-44f3-42bf-bfee-89d38f03d51e",
       "name": "Local File Trigger"
     },
     {
@@ -301,7 +301,7 @@
         460,
         1120
       ],
-      "id": "a225ccc7-e439-457c-8372-61dda23d4924",
+      "id": "726ec4ca-c521-47d5-ad0c-3e364f32be3a",
       "name": "Read/Write Files from Disk"
     },
     {
@@ -411,7 +411,7 @@
         680,
         1100
       ],
-      "id": "2380c17c-6248-43d7-af09-1db4cc48ef22",
+      "id": "82a246cc-e919-4bbb-b8ff-b96d5f4d55be",
       "name": "Switch"
     },
     {
@@ -426,11 +426,11 @@
         1820,
         1180
       ],
-      "id": "fac229f5-5522-4773-945f-439160e6a5ad",
+      "id": "8607f9ca-79c3-48fa-a139-62a6fa56effb",
       "name": "Postgres PGVector Store",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -445,7 +445,7 @@
         1900,
         1400
       ],
-      "id": "28d397ef-1709-4c66-a3b6-7972ecdfffe6",
+      "id": "5e8f556b-944d-42ff-ba6c-e9dfb4a099f7",
       "name": "Default Data Loader"
     },
     {
@@ -460,7 +460,7 @@
         1800,
         1520
       ],
-      "id": "bb9a48ab-08a3-4dbd-a22a-46211e917312",
+      "id": "d9558706-6a08-41d8-8a1a-59783e8c3c19",
       "name": "Recursive Character Text Splitter"
     },
     {
@@ -474,7 +474,7 @@
         1400,
         1000
       ],
-      "id": "1500628f-1e39-432b-8a1b-8505802c8c72",
+      "id": "0ce72a75-03f4-4020-959b-e72ec4a31b2b",
       "name": "Aggregate"
     },
     {
@@ -495,7 +495,7 @@
         1540,
         1100
       ],
-      "id": "2a2b0499-78e4-4794-855c-d60336106583",
+      "id": "c41b3e43-6073-4da3-8f5d-67d2e9ffe651",
       "name": "Summarize"
     },
     {
@@ -509,7 +509,7 @@
         1180,
         1000
       ],
-      "id": "4f0bf67a-eea6-4d52-aa4a-9a8500370fbd",
+      "id": "c9fc752a-bf92-49c0-b462-30e58d835fe4",
       "name": "Extract from Excel"
     },
     {
@@ -522,7 +522,7 @@
         1180,
         1200
       ],
-      "id": "887ea639-9cea-4293-a44c-980d823a44ef",
+      "id": "af5922af-d2ae-4a1c-9333-189a3530b3dc",
       "name": "Extract from CSV"
     },
     {
@@ -536,7 +536,7 @@
         1300,
         880
       ],
-      "id": "03e8e42d-0315-482e-8f1e-db9aed3740fd",
+      "id": "825dcf0e-71b7-421e-8f66-5391ba1100c5",
       "name": "Extract from PDF"
     },
     {
@@ -602,11 +602,11 @@
         1400,
         1200
       ],
-      "id": "b607f31c-0633-4d35-8d61-60c3347eba90",
+      "id": "04636023-c08c-44bc-a1a5-ff276f6e864e",
       "name": "Insert Table Rows",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -637,7 +637,7 @@
         1760,
         960
       ],
-      "id": "2fd6ff60-397f-4433-a3b0-aa2969adae8a",
+      "id": "3108d10f-e3e3-47eb-8160-3884c04e7ff4",
       "name": "Set Schema"
     },
     {
@@ -653,7 +653,7 @@
         -680,
         860
       ],
-      "id": "4d105988-b435-4b68-ab1c-f7ed8cde89cd",
+      "id": "06ef8beb-264f-4e91-a6b5-e0a3540ae136",
       "name": "Sticky Note3"
     },
     {
@@ -668,7 +668,7 @@
         40,
         80
       ],
-      "id": "335653de-ba47-49d3-8657-f1b32bff1d6d",
+      "id": "2e0b9afe-3d11-42ae-b5bd-045b1ddbd2eb",
       "name": "When chat message received",
       "webhookId": "795ec315-0e36-4aa5-a29e-1d527a8565d5"
     },
@@ -677,7 +677,7 @@
         "promptType": "define",
         "text": "={{ $json.body.chatInput }}",
         "options": {
-          "systemMessage": "You are a personal assistant who helps answer questions from a corpus of documents. The documents are either text based (Txt, docs, extracted PDFs, etc.) or tabular data (CSVs or Excel documents).\n\nYou are given tools to perform RAG in the 'documents' table, look up the documents available in your knowledge base in the 'document_metadata' table, extract all the text from a given document, and query the tabular files with SQL in the 'document_rows' table.\n\nAlways *start by performing RAG* unless the users asks you to check a document or the question requires a SQL query for tabular data (fetching a sum, finding a max, something a RAG lookup would be unreliable for). If RAG doesn't help, then look at the documents that are available to you, find a few that you think would contain the answer, and then analyze those.\n\nAlways tell the user if you didn't find the answer. Don't make something up just to please them."
+          "systemMessage": "=You are a personal assistant designed to answer user questions based on a corpus of documents, which include text files (TXT, DOC, extracted PDFs) and tabular data (CSV, Excel).\n\nYou have the following tools:\n\n- RAG Search over the documents table (preferred first step).\n\n- Document Lookup in the document_metadata table.\n\n- Full Text Extraction from documents.\n\n- SQL Queries over the document_rows table (for tabular data analysis).\n\n- MCP Servers, including the MCP-pdf-generator tool for creating PDF or file outputs when requested.\n\nCore Workflow:\n\nAlways begin with a RAG search unless:\n\n- The user explicitly asks to review a specific document.\n\n- The query clearly involves tabular operations (e.g., sums, maximums, averages).\n\n- If RAG is insufficient, then:\n\n- Search the available document metadata.\n\n- Select the most relevant documents manually.\n\n- Analyze their content directly.\n\n- If a file or PDF needs to be created, ALWAYS use the 'MCP-pdf-generator' tool.\n\nImportant Behavior Rules:\n\nIf no answer can be confidently found, inform the user honestly. Do not invent or hallucinate information.\n\nStay methodical: prefer retrieval over assumption.\n\nWhen you use the 'MCP-pdf-generator', inform the user whether you could create the pdf or not.\n\nPrimary Goal: Deliver accurate, document-grounded answers or transparently report when information is unavailable"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -686,13 +686,13 @@
         560,
         80
       ],
-      "id": "61baacc8-e21e-4e6f-a986-d89c94b59662",
+      "id": "52d43832-51f8-453a-b6d3-57094f0ca00e",
       "name": "AI Agent"
     },
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Chat or Metadata').item.json.body.sessionId }}",
+        "sessionKey": "={{ $('Webhook Chat').item.json.body.sessionId }}",
         "contextWindowLength": 15
       },
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
@@ -701,11 +701,11 @@
         840,
         700
       ],
-      "id": "b472a335-8682-403c-a093-9cb2a1ca1db7",
+      "id": "481b4220-41b2-4f74-8d25-3527f7c05bfa",
       "name": "Postgres Chat Memory",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -724,28 +724,26 @@
         1520,
         640
       ],
-      "id": "fea9fec9-0c52-49e3-8651-60f30859eb58",
+      "id": "7ff93035-8621-4706-8298-144b6b595388",
       "name": "Postgres PGVector Store1",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
     },
     {
       "parameters": {
-        "respondWith": "text",
-        "responseBody": "={{ $json.output }}",
         "options": {}
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        1400,
+        1220,
         200
       ],
-      "id": "6353f0d4-1f80-4a0f-bf8e-846ebc077c88",
+      "id": "08610167-8f4c-4e3c-97fe-66998fed2d02",
       "name": "Respond to Webhook"
     },
     {
@@ -773,11 +771,11 @@
         980,
         720
       ],
-      "id": "41242b64-b681-4484-a5e5-0d015d23ed97",
+      "id": "afcf0153-88fa-4212-9f33-19e34fea0cd1",
       "name": "List Documents",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -787,7 +785,7 @@
         "descriptionType": "manual",
         "toolDescription": "Given a file ID, fetches the text from the document",
         "operation": "executeQuery",
-        "query": "SELECT string_agg(content, ' ') as document_text FROM documents WHERE metadata ->>'file_id' = $1 GROUP BY metadata->>'file_id';",
+        "query": "SELECT string_agg(content, ' ') as document_text FROM documents_pg WHERE metadata ->>'file_id' = $1 GROUP BY metadata->>'file_id';",
         "options": {
           "queryReplacement": "={{ $fromAI('file_id') }}"
         }
@@ -798,11 +796,11 @@
         1100,
         660
       ],
-      "id": "5089ed4e-def5-482c-9940-bf62cfae73ec",
+      "id": "614c383b-c55e-4227-a890-cc25cb5d6e36",
       "name": "Get File DOcuments",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -821,11 +819,11 @@
         1220,
         720
       ],
-      "id": "fbb8cb06-e9af-40ce-9d89-72820d4090d7",
+      "id": "c006886e-e3ab-4e0c-9301-12a6da9b6376",
       "name": "Query Document Rows",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -842,14 +840,14 @@
         -680,
         160
       ],
-      "id": "28b831f5-9871-4794-861e-d24fe9e1f4c8",
+      "id": "1d70f0ac-d87c-4fec-a736-20a11cdbf918",
       "name": "Sticky Note4"
     },
     {
       "parameters": {
         "content": "## AGENTE IA CON HERRAMIENTAS\n\n",
         "height": 580,
-        "width": 1620,
+        "width": 1420,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
@@ -858,7 +856,7 @@
         0,
         0
       ],
-      "id": "c9635498-6c32-4999-abc1-f9cb5ee80261",
+      "id": "bcc2e86e-b151-4f38-8a6b-c27af152227a",
       "name": "Sticky Note5"
     },
     {
@@ -946,11 +944,11 @@
         1960,
         960
       ],
-      "id": "1999ec86-0a22-4006-a3f3-c638276ed30f",
+      "id": "ff9d034c-6b07-4738-ba81-13f164f17287",
       "name": "Update Schema for Document Metadata",
       "credentials": {
         "postgres": {
-          "id": "7C9po2jK0JOl9t43",
+          "id": "yA9WtRKZ4xPMbNoh",
           "name": "Postgres account"
         }
       }
@@ -965,11 +963,11 @@
         1720,
         1400
       ],
-      "id": "99d28cde-fc1a-4d99-81c2-db6ae509c67d",
+      "id": "1673f396-c15a-485a-81dd-1aef9f978be9",
       "name": "Embeddings Ollama",
       "credentials": {
         "ollamaApi": {
-          "id": "9CZaXJ7iGxm1qg1O",
+          "id": "x7gTGYnDg2pRYLzQ",
           "name": "Ollama account"
         }
       }
@@ -984,11 +982,11 @@
         1400,
         720
       ],
-      "id": "e17b60f5-9fb8-4cec-88b8-9564194a7212",
+      "id": "7de6980a-707e-4f26-9f40-f27194b66b2b",
       "name": "Embeddings Ollama1",
       "credentials": {
         "ollamaApi": {
-          "id": "9CZaXJ7iGxm1qg1O",
+          "id": "x7gTGYnDg2pRYLzQ",
           "name": "Ollama account"
         }
       }
@@ -1014,8 +1012,9 @@
         40,
         680
       ],
-      "id": "06513cd5-d4c8-4ced-a4f6-7989b416c12b",
+      "id": "c0bd99c8-b52c-4635-8eb0-6b39a3a47370",
       "name": "GitHub",
+      "webhookId": "b2713995-b86c-43cd-ac02-572e8a61ebe6",
       "disabled": true
     },
     {
@@ -1031,7 +1030,7 @@
         0,
         600
       ],
-      "id": "2ba8a099-8a6c-4f81-93a7-7407bc4bdb10",
+      "id": "97469225-9d9c-4673-ab60-d06f363995f7",
       "name": "Sticky Note7"
     },
     {
@@ -1050,12 +1049,12 @@
         520,
         700
       ],
-      "id": "7061d1ce-d72c-4bf3-bb57-119ee8cb319f",
+      "id": "e47378e3-08fc-43e0-9b7a-27d0b16dd9fe",
       "name": "Ollama OpenAI",
       "credentials": {
         "openAiApi": {
-          "id": "TKCk7y3RCGoq9G4n",
-          "name": "Ollama OpenAI"
+          "id": "Ndg0B012Dk2MVPoe",
+          "name": "Ollama "
         }
       }
     },
@@ -1075,11 +1074,11 @@
         360,
         700
       ],
-      "id": "a4647318-7676-44bd-911a-4bc0abbbca35",
+      "id": "9ffddcef-8f9f-49f8-b492-af204c1baf26",
       "name": "OpenAI Cuenta 1",
       "credentials": {
         "openAiApi": {
-          "id": "tkVSD2dWZ5IIBz7m",
+          "id": "2qlV6lWakddLWfCa",
           "name": "OpenAi account"
         }
       }
@@ -1099,12 +1098,12 @@
         680,
         700
       ],
-      "id": "af961d73-b029-4302-82c2-99c139f4ad4d",
+      "id": "c7f59b59-4ffe-476a-88d5-24ac09c86af8",
       "name": "OpenAI Cuenta 2",
       "credentials": {
         "openAiApi": {
-          "id": "AKnD9Icg26DrcUuz",
-          "name": "OpenAi account 2"
+          "id": "2qlV6lWakddLWfCa",
+          "name": "OpenAi account"
         }
       }
     },
@@ -1121,7 +1120,7 @@
         320,
         600
       ],
-      "id": "1620118b-714c-427e-bc20-68fda115f1e1",
+      "id": "58527928-76a9-4487-8a09-63025774a85d",
       "name": "Sticky Note8"
     },
     {
@@ -1136,7 +1135,7 @@
         1300,
         1520
       ],
-      "id": "20660f44-a3fc-44b0-b570-e46ee9cac126",
+      "id": "272b2a13-556b-495d-82ba-16f23428108b",
       "name": "Extract from Text"
     },
     {
@@ -1152,7 +1151,7 @@
         160,
         600
       ],
-      "id": "e5c5dda1-7269-427a-a748-ce8dacb28dcb",
+      "id": "7bc30b30-5319-4211-98fa-5f853155a2e5",
       "name": "Sticky Note9"
     },
     {
@@ -1163,7 +1162,7 @@
         1300,
         1360
       ],
-      "id": "646bc302-3770-4f8e-856b-2b51ed2eebd7",
+      "id": "186d6699-97b4-44af-a642-43f699c0e4ca",
       "name": "Node to extract info from an image"
     },
     {
@@ -1179,32 +1178,9 @@
         20,
         380
       ],
-      "id": "db01f3a0-32bf-460e-8b60-55cb00c5ae61",
+      "id": "49b9467a-5394-4892-9074-ab6a214fb6bf",
       "name": "Webhook Chat",
       "webhookId": "4813073e-cc9a-4fa6-85e1-4b7c637b09ce"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "e2d7d7f7-b1d2-4373-a268-c61c1e12e63f",
-              "name": "output",
-              "value": "={{ $json.output || $json.text }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        1060,
-        200
-      ],
-      "id": "a997ca85-602b-498e-88d9-9af479d4bb1f",
-      "name": "Edit Fields"
     },
     {
       "parameters": {
@@ -1217,7 +1193,7 @@
         580,
         320
       ],
-      "id": "60f7aa97-942e-4399-b6c3-6dca2cd19f97",
+      "id": "c9a84fa0-17b9-4bda-8718-7a1d545c0e43",
       "name": "Basic LLM Chain"
     },
     {
@@ -1247,10 +1223,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        220,
+        260,
         260
       ],
-      "id": "729f7b72-6e4a-429b-a73f-a237f814ef30",
+      "id": "015a29f1-4770-41c6-8574-e265cda159ac",
       "name": "Chat or Metadata"
     },
     {
@@ -1266,7 +1242,7 @@
         960,
         600
       ],
-      "id": "a3a6feb4-d583-4bd3-b1db-a9435ccc592a",
+      "id": "a99bb07c-b871-466c-824b-0184893164fa",
       "name": "Sticky Note6"
     },
     {
@@ -1282,7 +1258,7 @@
         800,
         600
       ],
-      "id": "bb15cde8-72df-4baa-9470-090455c1f197",
+      "id": "3acdded9-b4df-4372-bd47-c0d9ee30e3c7",
       "name": "Sticky Note10"
     },
     {
@@ -1297,15 +1273,16 @@
         1360,
         600
       ],
-      "id": "bcaed999-62bd-4e48-865c-ac9b97bc1d34",
+      "id": "e59b0db7-f824-40ab-b2f8-72587dbf1c28",
       "name": "Sticky Note11"
     },
     {
       "parameters": {
         "model": {
           "__rl": true,
+          "value": "qwen2.5:7b-instruct-q4_K_M",
           "mode": "list",
-          "value": "gpt-4o-mini"
+          "cachedResultName": "qwen2.5:7b-instruct-q4_K_M"
         },
         "options": {}
       },
@@ -1315,14 +1292,82 @@
         440,
         460
       ],
-      "id": "0bddbfa1-7838-4f7d-8d38-0e0ebca42a08",
+      "id": "72ae0de6-749d-4cd0-973a-c080a2c70f97",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
-          "id": "tkVSD2dWZ5IIBz7m",
-          "name": "OpenAi account"
+          "id": "Ndg0B012Dk2MVPoe",
+          "name": "Ollama "
         }
       }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d264444f-c01a-4fa0-86a4-c0bf0e4c8537",
+              "name": "output",
+              "value": "={{ $json.output || $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1000,
+        200
+      ],
+      "id": "d276a29a-f622-453c-8d3b-5084ec731d7d",
+      "name": "Edit Fields (Set Output Field)"
+    },
+    {
+      "parameters": {
+        "sseEndpoint": "http://host.docker.internal:8070/sse"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        180
+      ],
+      "id": "2ac41bf5-9761-4589-ac7b-e5ac21d708a5",
+      "name": "MCP-pdf-generator"
+    },
+    {
+      "parameters": {
+        "content": "# MCP Servers\n",
+        "height": 580,
+        "width": 360,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        0
+      ],
+      "id": "96b0aa55-4961-4387-bd6d-028049a5dc5b",
+      "name": "Sticky Note12"
+    },
+    {
+      "parameters": {
+        "content": "## Export info to PDF\nThis MCP Server extracts the output of the Agent and creates a PDF file with that information",
+        "height": 220,
+        "width": 320,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        80
+      ],
+      "id": "a8739a20-02ca-4022-8924-e6e306089717",
+      "name": "Sticky Note13"
     }
   ],
   "pinData": {},
@@ -1595,7 +1640,7 @@
       "main": [
         [
           {
-            "node": "Edit Fields",
+            "node": "Edit Fields (Set Output Field)",
             "type": "main",
             "index": 0
           }
@@ -1690,22 +1735,11 @@
         ]
       ]
     },
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Basic LLM Chain": {
       "main": [
         [
           {
-            "node": "Edit Fields",
+            "node": "Edit Fields (Set Output Field)",
             "type": "main",
             "index": 0
           }
@@ -1730,11 +1764,6 @@
         ]
       ]
     },
-    "OpenAI Cuenta 1": {
-      "ai_languageModel": [
-        []
-      ]
-    },
     "Ollama OpenAI": {
       "ai_languageModel": [
         [
@@ -1756,16 +1785,78 @@
           }
         ]
       ]
+    },
+    "OpenAI Cuenta 1": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Cuenta 2": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Edit Fields (Set Output Field)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP-pdf-generator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "0ad405e6-45a4-450f-9dc4-39a844f88236",
+  "versionId": "27422e63-a44e-4a95-808e-a4c473995ce5",
   "meta": {
-    "instanceId": "1d3657fa17cad3966d8f8f73a6d0829ac14ea981a7c2e783187b4b45f710c788"
+    "instanceId": "fc37c8433250d4ab82bb048d7f9d7a48f4473910af154f61650e87932c72be20"
   },
-  "id": "mASzkN0XOIB2HPtS",
-  "tags": []
+  "id": "EcFWUm9UQd6RuYYt",
+  "tags": [
+    {
+      "createdAt": "2025-04-24T09:04:23.474Z",
+      "updatedAt": "2025-04-24T09:04:23.474Z",
+      "id": "3ZmDqgfqnAv5I6o2",
+      "name": "Chat"
+    },
+    {
+      "createdAt": "2025-04-24T09:04:18.647Z",
+      "updatedAt": "2025-04-24T09:04:18.647Z",
+      "id": "rTeRLBzUCf6ppZF9",
+      "name": "RAG"
+    },
+    {
+      "createdAt": "2025-04-24T09:04:28.382Z",
+      "updatedAt": "2025-04-24T09:04:28.382Z",
+      "id": "vxySv42rCz64mazU",
+      "name": "Documentation"
+    },
+    {
+      "createdAt": "2025-04-28T08:38:59.677Z",
+      "updatedAt": "2025-04-28T08:38:59.677Z",
+      "id": "zSXu6yu5IzRF9Y5R",
+      "name": "MCP"
+    }
+  ]
 }

@@ -16,7 +16,7 @@ class PdfService:
     @staticmethod
     def generate_pdf(content: str, title: str = "Report") -> str:
         """
-        Genera un pdf de una string de texto
+        Genera un pdf dada una string de texto
         """
         output_dir = PdfService.ensure_output_dir()
         filename = f"{title.replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
@@ -24,7 +24,7 @@ class PdfService:
 
         pdf = FPDF()
         pdf.add_page()
-        pdf.set_font("Arial", size=12)
+        pdf.set_font("Times New Roman", size=12)
         pdf.multi_cell(0, 10, content)
         pdf.output(filepath)
 
