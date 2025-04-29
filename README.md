@@ -48,9 +48,6 @@ El flujo lo activa o bien un chat de prueba de n8n o un nodo webhook que está c
 
 [^2]: Se puede modificar este modelo para que permita más tokens, ya que el flujo requiere de bastantes con estos dos comandos: ![image](https://github.com/user-attachments/assets/8efbc6f6-d871-440f-aa4e-d221eda501ba)
 
-
-
-
 - 4.1. Herramientas y características del Agente.
 El flujo cuenta con varios modelos de IA diferentes, en este caso para hacer pruebas tengo OpenAI y Ollama; una memoria en base de datos SQL que guarda la información y los mensajes de cada interacción con el chat; Un set de herramientas SQL para facilitar el acceso a los archivos:
   - **List Documents:**
@@ -67,6 +64,7 @@ Esta herramienta es la más sencilla de configurar si todo funciona correctament
 
 ### 5. MCP Servers
 Los MCP servers (Model Context Protocol) son servidores que gestionan la comunicación estructurada entre agentes de IA y otros sistemas. Permiten enviar y recibir mensajes en un formato definido, facilitando la integración modular de componentes. Se usan en agentes de IA para coordinar tareas, responder preguntas o acceder a herramientas externas de forma ordenada y eficiente.
+![image](https://github.com/user-attachments/assets/be73a48d-9460-4ae3-8ba8-ee9efe759d61)
 
 La estructura de los servidores MCP tal cual están planteados en este proyecto es la siguiente:
 1. Carpeta **public** (Opcional):
