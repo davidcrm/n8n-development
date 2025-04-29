@@ -88,7 +88,7 @@ Comando para levantar un contenedor con la imagen:
 En este proyecto hay 3 integraciones de MCP Servers. 
 
 - [**MCP-mem0:**](https://github.com/davidcrm/n8n-development/tree/main/mcp-mem0)
-Se trata de un servidor encargado de guardar y acceder a datos en una memoria, por ejemplo puedes decirle que trabajas en X empresa, y cuando le preguntes en qué empresas has trabajado, te dirá todas las empresas que tú le has dicho que guarde en su memoria. Es un ejemplo hecho del canal de [Cole Medin](https://youtube.com/@ColeMedin/videos).
+Se trata de un servidor encargado de guardar y acceder a datos en una memoria, por ejemplo puedes decirle que trabajas en X empresa, y cuando le preguntes en qué empresas has trabajado, te dirá todas las empresas que tú le has dicho que guarde en su memoria. Es un ejemplo obtenido del siguiente [repositorio](https://github.com/coleam00/mcp-mem0.git).
 - [**MCP-Extract-titles**](https://github.com/davidcrm/n8n-development/tree/main/mcp-extract-titles)
 Este servidor es muy sencillo, lo único que hace es, a partir de un texto, bien sea en formato MarkDown o texto plano, extrae lo que considera títulos, para ello se fija en que tenga alguna almohadilla delante (#) que se correspondería con un título en MarkDown o bien que esté escrito en mayúsculas.
 
@@ -222,6 +222,11 @@ DEFAULT_FONT_SIZE = 12
 ![prueba_MCP-extract-titles](https://github.com/user-attachments/assets/cadb4210-a02b-42e2-bbe2-bab06531eb55)
 
 #### Uso generación de PDF[^3]:
+En este caso se pregunta al asistente a través de OpenWebUI. La información que devuelve el agente se puede consultar [aquí]([./RAG_files/](https://github.com/davidcrm/n8n-development/blob/main/RAG_files/company_document.pdf)'.
+
 ![image](https://github.com/user-attachments/assets/aa2a5f6b-c536-41ad-ab0c-1813b49ebd7e)
-[^3]: Archivo generado en el contenedor de docker: ![image](https://github.com/user-attachments/assets/0c05e450-7d04-4acc-8487-268d9f8db664)
 > [Archivo](https://github.com/davidcrm/n8n-development/blob/main/output/Informacion_de_Puestos_de_Trabajo_20250429_085541.pdf)
+___
+[^3]: Archivo generado en el contenedor de docker:
+![image](https://github.com/user-attachments/assets/0c05e450-7d04-4acc-8487-268d9f8db664)
+
