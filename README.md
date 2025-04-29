@@ -98,11 +98,11 @@ Este servidor es el más útil de los 3 que hay implementados. Su objetivo es cr
 1. Importar todo lo necesario para construir nuestro MCP Server:
 - `FastMCP, Context`: clases del servidor MCP para manejar peticiones y su contexto.  
 - `asynccontextmanager`: decorador para crear contextos asincrónicos (`async with`).  
-- `AsyncIterator`: tipo para declarar iteradores asincrónicos.  
+- `AsyncIterator`: tipo para declarar iteradores asíncronos.  
 - `dataclass`: simplifica la creación de clases de solo datos.  
 - `load_dotenv`: carga variables de entorno desde un archivo `.env`.  
 - `PdfService`: clase personalizada desde `utils.py` para generar PDFs.  
-- `asyncio`: librería estándar para manejar código asincrónico en Python.
+- `asyncio`: librería estándar para manejar código asíncrono en Python.
 
 2. Cargar las variables de nuestro fichero .env:
 ```python
