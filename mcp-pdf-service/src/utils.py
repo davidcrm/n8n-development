@@ -4,13 +4,17 @@ from datetime import datetime
 
 from fpdf import FPDF
 
+OUTPUT_DIR = "output"
+DEFAULT_FONT = "Times New Roman"
+DEFAULT_FONT_SIZE = 12
+
 class PdfService:
 
     @staticmethod
     def ensure_output_dir() -> str:
         """Se asegura de que existe la ruta de salida y la devuelve"""
-        output_dir = "output"
-        os.makedirs(output_dir, exist_ok=True)
+        output_dir = OUTPUT_DIR
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
         return output_dir
     
     @staticmethod
@@ -24,7 +28,7 @@ class PdfService:
 
         pdf = FPDF()
         pdf.add_page()
-        pdf.set_font("Times New Roman", size=12)
+        pdf.set_font(DEFAULT_FONT, DEFAULT_FONT_SIZE)
         pdf.multi_cell(0, 10, content)
         pdf.output(filepath)
 
