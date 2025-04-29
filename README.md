@@ -64,7 +64,8 @@ Esta herramienta es la más sencilla de configurar si todo funciona correctament
 
 ### 5. MCP Servers
 Los MCP servers (Model Context Protocol) son servidores que gestionan la comunicación estructurada entre agentes de IA y otros sistemas. Permiten enviar y recibir mensajes en un formato definido, facilitando la integración modular de componentes. Se usan en agentes de IA para coordinar tareas, responder preguntas o acceder a herramientas externas de forma ordenada y eficiente.
-![image](https://github.com/user-attachments/assets/be73a48d-9460-4ae3-8ba8-ee9efe759d61)
+
+![image](https://github.com/user-attachments/assets/e7244c0f-06f9-4d7a-b7f1-6b8d89fd6c68)
 
 La estructura de los servidores MCP tal cual están planteados en este proyecto es la siguiente:
 1. Carpeta **public** (Opcional):
@@ -89,12 +90,11 @@ En este proyecto hay 3 integraciones de MCP Servers.
 Se trata de un servidor encargado de guardar y acceder a datos en una memoria, por ejemplo puedes decirle que trabajas en X empresa, y cuando le preguntes en qué empresas has trabajado, te dirá todas las empresas que tú le has dicho que guarde en su memoria. Es un ejemplo obtenido del siguiente [repositorio](https://github.com/coleam00/mcp-mem0.git).
 - [**MCP-Extract-titles**](https://github.com/davidcrm/n8n-development/tree/main/mcp-extract-titles)
 Este servidor es muy sencillo, lo único que hace es, a partir de un texto, bien sea en formato MarkDown o texto plano, extrae lo que considera títulos, para ello se fija en que tenga alguna almohadilla delante (#) que se correspondería con un título en MarkDown o bien que esté escrito en mayúsculas.
-
-- [**MCP-pdf-service](https://github.com/davidcrm/n8n-development/tree/main/mcp-pdf-service)
+- [**MCP-pdf-service**](https://github.com/davidcrm/n8n-development/tree/main/mcp-pdf-service)
 Este servidor es el más útil de los 3 que hay implementados. Su objetivo es crear un pdf con la información solicitada por el usuario. De momento lo hace en un formato bastante pobre y sin estilos pero en el futuro se puede incluso añadir plantillas para distintos tipos de documentos (facturas, informes, etc.) [*Ejemplos*](https://github.com/davidcrm/n8n-development/tree/main/output).
 
 
-## Definición de un MCP Server:
+### Creación de un MCP Server:
 1. Importar todo lo necesario para construir nuestro MCP Server:
 - `FastMCP, Context`: clases del servidor MCP para manejar peticiones y su contexto.  
 - `asynccontextmanager`: decorador para crear contextos asincrónicos (`async with`).  
@@ -108,7 +108,7 @@ Este servidor es el más útil de los 3 que hay implementados. Su objetivo es cr
 ```python
 load_dotenv()
 ```
-3. Luego crearemos un contexto para nuestro servidor en el que podremos añadir "propiedades" que queramos que tenga. En este caso está vacío pero se podría añadir, por ejemplo, un atributo con el la clase PdfService.
+3. Luego crearemos un contexto para nuestro servidor en el que podremos añadir "propiedades" que queramos que tenga. En este caso está vacío pero se podría añadir, por ejemplo, un atributo con la clase PdfService.
 
 ```python
 @dataclass
@@ -131,7 +131,7 @@ mcp = FastMCP(
     "mcp-pdf-service",
     description="MCP server for generating pdf files with info asked",
     lifespan= app_lifespan,
-    host=os.getenv("HOST", "0.0.0.0"),
+    host=os.getenv("HOST", "0.0.0.0"), # 0.0.0.0 para que se ejecute en el localhost del contenedor
     port=os.getenv("PORT", "<puerto>")
 )   
 ```
@@ -214,6 +214,10 @@ DEFAULT_FONT_SIZE = 12
 ```
 ## Flujo de ejemplo donde se usan los servidores:
 ![image](https://github.com/user-attachments/assets/a1dc663b-537a-40a6-8988-977d6285617c)
+
+Muy importante poner `host.docker.internal` en la ruta de acceso al servicio **que debe estar conectado en red al contenedor donde tenemos n8n**
+![image](https://github.com/user-attachments/assets/b911e466-f60a-455e-b5ed-62cfab909f82)
+> Se recomienda añadir autenticación a los servidores para que el acceso no sea público.
 
 #### Uso extracción de títulos:
 
