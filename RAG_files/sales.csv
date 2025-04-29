@@ -1,0 +1,11 @@
+ID_Venta,Fecha,Cliente,Producto,Cantidad,Precio_Unitario,Total_Venta,Metodo_Pago,Vendedor
+1001,2025-03-01,Empresa A,Software IA Pro,2,1500,3000,Transferencia,Carlos Ramírez
+1002,2025-03-02,Empresa B,Chatbot Asistente,5,800,4000,Crédito,Ana Gómez
+1003,2025-03-03,Empresa C,Análisis Predictivo,1,5000,5000,Efectivo,Laura Fernández
+1004,2025-03-04,Empresa D,Software IA Pro,3,1500,4500,Transferencia,Diego Martínez
+1005,2025-03-05,Empresa E,Chatbot Asistente,2,800,1600,Crédito,Elena Torres
+1006,2025-03-06,Empresa F,Análisis Predictivo,4,5000,20000,Efectivo,Rodrigo Sánchez
+1007,2025-03-07,Empresa G,Software IA Pro,1,1500,1500,Transferencia,Carlos Ramírez
+1008,2025-03-08,Empresa H,Chatbot Asistente,3,800,2400,Crédito,Ana Gómez
+1009,2025-03-09,Empresa I,Análisis Predictivo,2,5000,10000,Efectivo,Laura Fernández
+1010,2025-03-10,Empresa J,Software IA Pro,5,1500,7500,Transferencia,Diego Martínez

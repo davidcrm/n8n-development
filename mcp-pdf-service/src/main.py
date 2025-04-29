@@ -23,7 +23,7 @@ async def app_lifespan(server:FastMCP) -> AsyncIterator[AppContext]:
 
 # Inicializar el servidor MCP con el contexto vacío que hemos creado
 mcp = FastMCP(
-    "mcp-mem0",
+    "mcp-pdf-service",
     description="MCP server for generating pdf files with info asked",
     lifespan= app_lifespan,
     host=os.getenv("HOST", "0.0.0.0"),
