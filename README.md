@@ -222,7 +222,7 @@ DEFAULT_FONT_SIZE = 12
 ![prueba_MCP-extract-titles](https://github.com/user-attachments/assets/cadb4210-a02b-42e2-bbe2-bab06531eb55)
 
 #### Uso generación de PDF[^3]:
-En este caso se pregunta al asistente a través de OpenWebUI. La información que devuelve el agente se puede consultar [aquí]([./RAG_files/](https://github.com/davidcrm/n8n-development/blob/main/RAG_files/company_document.pdf)'.
+En este caso se pregunta al asistente a través de OpenWebUI. La información que devuelve el agente se puede consultar [aquí](https://github.com/davidcrm/n8n-development/blob/main/RAG_files/company_document.pdf)'.
 
 ![image](https://github.com/user-attachments/assets/aa2a5f6b-c536-41ad-ab0c-1813b49ebd7e)
 > [Archivo](https://github.com/davidcrm/n8n-development/blob/main/output/Informacion_de_Puestos_de_Trabajo_20250429_085541.pdf)
