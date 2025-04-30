@@ -6,14 +6,17 @@ OpenWeb-UI es una aplicación de codigo abierto que permite "desplegar" tus agen
 
 Una de las novedades que ofrece esta aplicación es la posibilidad de integrar código para añadir funcionalidades a la aplicación, es altamente personalizable. A parte ofrece la posibilidad de generar los titulos y las etiquetas de cada chat usando Inteligencia artificial. [Link al repositorio para su instalación](https://github.com/open-webui/open-webui)
 
-Una vez instalado, deberemos ir al panel de administración, en el apartado funciones vamos a crear una nueva con el código de [n8n_connector_OpenWebUI.py](https://github.com/davidcrm/n8n-development/blob/main/n8n_connector_OpenWebUI.py) y ajustaremos las variables desde fuera:
+Una vez instalado, deberemos ir al panel de administración. En el apartado funciones vamos a crear una nueva con el código de [n8n_connector_OpenWebUI.py](https://github.com/davidcrm/n8n-development/blob/main/n8n_connector_OpenWebUI.py)
+![image](https://github.com/user-attachments/assets/a254e679-c2a9-4f9b-9177-5175154cd1cb)
+y ajustaremos las variables desde fuera:
+
 ![image](https://github.com/user-attachments/assets/ae758593-9c39-46d0-af40-b7090528506b)
 
-![image](https://github.com/user-attachments/assets/a254e679-c2a9-4f9b-9177-5175154cd1cb)
+
 
 Una vez completado este proceso podremos añadir nuestro agente a nuestra interfaz de OpenWebUI.
 
-> Se recomienda instalar con Docker/[Docker compose](https://github.com/davidcrm/n8n-development/blob/main/docker-compose.yml). [^1]
+> Se recomienda instalar con Docker/Docker compose. [^1]
 
 [^1]: Archivo `[docker-compose.yml](https://github.com/davidcrm/n8n-development/blob/main/docker-compose.yml)
 
