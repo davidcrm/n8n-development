@@ -6,6 +6,16 @@ OpenWeb-UI es una aplicación de codigo abierto que permite "desplegar" tus agen
 
 Una de las novedades que ofrece esta aplicación es la posibilidad de integrar código para añadir funcionalidades a la aplicación, es altamente personalizable. A parte ofrece la posibilidad de generar los titulos y las etiquetas de cada chat usando Inteligencia artificial. [Link al repositorio para su instalación](https://github.com/open-webui/open-webui)
 
+Una vez instalado, deberemos ir al panel de administración. En el apartado funciones vamos a crear una nueva con el código de [n8n_connector_OpenWebUI.py](https://github.com/davidcrm/n8n-development/blob/main/n8n_connector_OpenWebUI.py)
+![image](https://github.com/user-attachments/assets/a254e679-c2a9-4f9b-9177-5175154cd1cb)
+y ajustaremos las variables desde fuera:
+
+![image](https://github.com/user-attachments/assets/ae758593-9c39-46d0-af40-b7090528506b)
+
+
+
+Una vez completado este proceso podremos añadir nuestro agente a nuestra interfaz de OpenWebUI.
+
 > Se recomienda instalar con Docker/Docker compose. [^1]
 
 [^1]: Archivo `[docker-compose.yml](https://github.com/davidcrm/n8n-development/blob/main/docker-compose.yml)
@@ -48,9 +58,6 @@ El flujo lo activa o bien un chat de prueba de n8n o un nodo webhook que está c
 
 [^2]: Se puede modificar este modelo para que permita más tokens, ya que el flujo requiere de bastantes con estos dos comandos: ![image](https://github.com/user-attachments/assets/8efbc6f6-d871-440f-aa4e-d221eda501ba)
 
-
-
-
 - 4.1. Herramientas y características del Agente.
 El flujo cuenta con varios modelos de IA diferentes, en este caso para hacer pruebas tengo OpenAI y Ollama; una memoria en base de datos SQL que guarda la información y los mensajes de cada interacción con el chat; Un set de herramientas SQL para facilitar el acceso a los archivos:
   - **List Documents:**
@@ -67,6 +74,8 @@ Esta herramienta es la más sencilla de configurar si todo funciona correctament
 
 ### 5. MCP Servers
 Los MCP servers (Model Context Protocol) son servidores que gestionan la comunicación estructurada entre agentes de IA y otros sistemas. Permiten enviar y recibir mensajes en un formato definido, facilitando la integración modular de componentes. Se usan en agentes de IA para coordinar tareas, responder preguntas o acceder a herramientas externas de forma ordenada y eficiente.
+
+![image](https://github.com/user-attachments/assets/e7244c0f-06f9-4d7a-b7f1-6b8d89fd6c68)
 
 La estructura de los servidores MCP tal cual están planteados en este proyecto es la siguiente:
 1. Carpeta **public** (Opcional):
@@ -88,29 +97,28 @@ Comando para levantar un contenedor con la imagen:
 En este proyecto hay 3 integraciones de MCP Servers. 
 
 - [**MCP-mem0:**](https://github.com/davidcrm/n8n-development/tree/main/mcp-mem0)
-Se trata de un servidor encargado de guardar y acceder a datos en una memoria, por ejemplo puedes decirle que trabajas en X empresa, y cuando le preguntes en qué empresas has trabajado, te dirá todas las empresas que tú le has dicho que guarde en su memoria. Es un ejemplo hecho del canal de [Cole Medin](https://youtube.com/@ColeMedin/videos).
+Se trata de un servidor encargado de guardar y acceder a datos en una memoria, por ejemplo puedes decirle que trabajas en X empresa, y cuando le preguntes en qué empresas has trabajado, te dirá todas las empresas que tú le has dicho que guarde en su memoria. Es un ejemplo obtenido del siguiente [repositorio](https://github.com/coleam00/mcp-mem0.git).
 - [**MCP-Extract-titles**](https://github.com/davidcrm/n8n-development/tree/main/mcp-extract-titles)
 Este servidor es muy sencillo, lo único que hace es, a partir de un texto, bien sea en formato MarkDown o texto plano, extrae lo que considera títulos, para ello se fija en que tenga alguna almohadilla delante (#) que se correspondería con un título en MarkDown o bien que esté escrito en mayúsculas.
-
-- [**MCP-pdf-service](https://github.com/davidcrm/n8n-development/tree/main/mcp-pdf-service)
+- [**MCP-pdf-service**](https://github.com/davidcrm/n8n-development/tree/main/mcp-pdf-service)
 Este servidor es el más útil de los 3 que hay implementados. Su objetivo es crear un pdf con la información solicitada por el usuario. De momento lo hace en un formato bastante pobre y sin estilos pero en el futuro se puede incluso añadir plantillas para distintos tipos de documentos (facturas, informes, etc.) [*Ejemplos*](https://github.com/davidcrm/n8n-development/tree/main/output).
 
 
-## Definición de un MCP Server:
+### Creación de un MCP Server:
 1. Importar todo lo necesario para construir nuestro MCP Server:
 - `FastMCP, Context`: clases del servidor MCP para manejar peticiones y su contexto.  
 - `asynccontextmanager`: decorador para crear contextos asincrónicos (`async with`).  
-- `AsyncIterator`: tipo para declarar iteradores asincrónicos.  
+- `AsyncIterator`: tipo para declarar iteradores asíncronos.  
 - `dataclass`: simplifica la creación de clases de solo datos.  
 - `load_dotenv`: carga variables de entorno desde un archivo `.env`.  
 - `PdfService`: clase personalizada desde `utils.py` para generar PDFs.  
-- `asyncio`: librería estándar para manejar código asincrónico en Python.
+- `asyncio`: librería estándar para manejar código asíncrono en Python.
 
 2. Cargar las variables de nuestro fichero .env:
 ```python
 load_dotenv()
 ```
-3. Luego crearemos un contexto para nuestro servidor en el que podremos añadir "propiedades" que queramos que tenga. En este caso está vacío pero se podría añadir, por ejemplo, un atributo con el la clase PdfService.
+3. Luego crearemos un contexto para nuestro servidor en el que podremos añadir "propiedades" que queramos que tenga. En este caso está vacío pero se podría añadir, por ejemplo, un atributo con la clase PdfService.
 
 ```python
 @dataclass
@@ -133,7 +141,7 @@ mcp = FastMCP(
     "mcp-pdf-service",
     description="MCP server for generating pdf files with info asked",
     lifespan= app_lifespan,
-    host=os.getenv("HOST", "0.0.0.0"),
+    host=os.getenv("HOST", "0.0.0.0"), # 0.0.0.0 para que se ejecute en el localhost del contenedor
     port=os.getenv("PORT", "<puerto>")
 )   
 ```
@@ -217,11 +225,20 @@ DEFAULT_FONT_SIZE = 12
 ## Flujo de ejemplo donde se usan los servidores:
 ![image](https://github.com/user-attachments/assets/a1dc663b-537a-40a6-8988-977d6285617c)
 
+Muy importante poner `host.docker.internal` en la ruta de acceso al servicio **que debe estar conectado en red al contenedor donde tenemos n8n**
+![image](https://github.com/user-attachments/assets/b911e466-f60a-455e-b5ed-62cfab909f82)
+> Se recomienda añadir autenticación a los servidores para que el acceso no sea público.
+
 #### Uso extracción de títulos:
 
 ![prueba_MCP-extract-titles](https://github.com/user-attachments/assets/cadb4210-a02b-42e2-bbe2-bab06531eb55)
 
 #### Uso generación de PDF[^3]:
+En este caso se pregunta al asistente a través de OpenWebUI. La información que devuelve el agente se puede consultar [aquí](https://github.com/davidcrm/n8n-development/blob/main/RAG_files/company_document.pdf)'.
+
 ![image](https://github.com/user-attachments/assets/aa2a5f6b-c536-41ad-ab0c-1813b49ebd7e)
-[^3]: Archivo generado en el contenedor de docker: ![image](https://github.com/user-attachments/assets/0c05e450-7d04-4acc-8487-268d9f8db664)
 > [Archivo](https://github.com/davidcrm/n8n-development/blob/main/output/Informacion_de_Puestos_de_Trabajo_20250429_085541.pdf)
+___
+[^3]: Archivo generado en el contenedor de docker:
+![image](https://github.com/user-attachments/assets/0c05e450-7d04-4acc-8487-268d9f8db664)
+

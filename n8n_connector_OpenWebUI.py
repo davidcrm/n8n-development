@@ -1,19 +1,11 @@
-"""
-title: n8n Pipe Function
-author: Cole Medin
-author_url: https://www.youtube.com/@ColeMedin
-version: 0.2.0
-
-This module defines a Pipe class that utilizes N8N for an Agent
-"""
-
+# Librerías necesarias
 from typing import Optional, Callable, Awaitable
 from pydantic import BaseModel, Field
 import os
 import time
 import requests
 
-
+# Función que extrae información (chat_id, message_id) de un event emitter
 def extract_event_info(event_emitter) -> tuple[Optional[str], Optional[str]]:
     if not event_emitter or not event_emitter.__closure__:
         return None, None
@@ -24,30 +16,27 @@ def extract_event_info(event_emitter) -> tuple[Optional[str], Optional[str]]:
             return chat_id, message_id
     return None, None
 
-
+# Clase principal Pipe que conecta con un workflow de n8n
 class Pipe:
+    # Clase interna Valves: define configuración de conexión a n8n
     class Valves(BaseModel):
-        n8n_url: str = Field(
-            default="https://n8n.[your domain].com/webhook/[your webhook URL]"
-        )
-        n8n_bearer_token: str = Field(default="...")
-        input_field: str = Field(default="chatInput")
-        response_field: str = Field(default="output")
-        emit_interval: float = Field(
-            default=2.0, description="Interval in seconds between status emissions"
-        )
-        enable_status_indicator: bool = Field(
-            default=True, description="Enable or disable status indicator emissions"
-        )
+        n8n_url: str = Field(default="https://n8n.[your domain].com/webhook/[your webhook URL]")
+        n8n_bearer_token: str = Field(default="...")  # Token de autorización para n8n
+        input_field: str = Field(default="chatInput")  # Campo de entrada esperado por n8n
+        response_field: str = Field(default="output")  # Campo donde se recibirá la respuesta
+        emit_interval: float = Field(default=2.0, description="Intervalo en segundos entre emisiones de estado")
+        enable_status_indicator: bool = Field(default=True, description="Habilitar o deshabilitar emisiones de estado")
 
     def __init__(self):
+        # Inicializa la instancia de Pipe
         self.type = "pipe"
         self.id = "n8n_pipe"
         self.name = "N8N Pipe"
-        self.valves = self.Valves()
-        self.last_emit_time = 0
+        self.valves = self.Valves()  # Configuración por defecto
+        self.last_emit_time = 0  # Última vez que se envió un estado
         pass
 
+    # Método para emitir estados (información o errores) al exterior
     async def emit_status(
         self,
         __event_emitter__: Callable[[dict], Awaitable[None]],
@@ -56,12 +45,11 @@ class Pipe:
         done: bool,
     ):
         current_time = time.time()
+        # Solo emite si ha pasado suficiente tiempo o si ya se ha terminado
         if (
             __event_emitter__
             and self.valves.enable_status_indicator
-            and (
-                current_time - self.last_emit_time >= self.valves.emit_interval or done
-            )
+            and (current_time - self.last_emit_time >= self.valves.emit_interval or done)
         ):
             await __event_emitter__(
                 {
@@ -76,6 +64,7 @@ class Pipe:
             )
             self.last_emit_time = current_time
 
+    # Método principal: conecta el cuerpo del mensaje con un workflow de n8n
     async def pipe(
         self,
         body: dict,
@@ -83,17 +72,17 @@ class Pipe:
         __event_emitter__: Callable[[dict], Awaitable[None]] = None,
         __event_call__: Callable[[dict], Awaitable[dict]] = None,
     ) -> Optional[dict]:
-        await self.emit_status(
-            __event_emitter__, "info", "/Calling N8N Workflow...", False
-        )
+        # Emite estado: llamando al workflow de n8n
+        await self.emit_status(__event_emitter__, "info", "/Calling N8N Workflow...", False)
+        
         chat_id, _ = extract_event_info(__event_emitter__)
         messages = body.get("messages", [])
 
-        # Verify a message is available
+        # Verifica que exista al menos un mensaje
         if messages:
             question = messages[-1]["content"]
             try:
-                # Invoke N8N workflow
+                # Construye la petición POST a n8n
                 headers = {
                     "Authorization": f"Bearer {self.valves.n8n_bearer_token}",
                     "Content-Type": "application/json",
@@ -103,14 +92,16 @@ class Pipe:
                 response = requests.post(
                     self.valves.n8n_url, json=payload, headers=headers
                 )
+                # Si respuesta es exitosa, extrae la respuesta de n8n
                 if response.status_code == 200:
                     n8n_response = response.json()[self.valves.response_field]
                 else:
                     raise Exception(f"Error: {response.status_code} - {response.text}")
 
-                # Set assitant message with chain reply
+                # Agrega la respuesta de n8n al cuerpo de mensajes como asistente
                 body["messages"].append({"role": "assistant", "content": n8n_response})
             except Exception as e:
+                # Emite error si falla la comunicación
                 await self.emit_status(
                     __event_emitter__,
                     "error",
@@ -118,8 +109,8 @@ class Pipe:
                     True,
                 )
                 return {"error": str(e)}
-        # If no message is available alert user
         else:
+            # Si no hay mensajes en la solicitud, informa al usuario
             await self.emit_status(
                 __event_emitter__,
                 "error",
@@ -133,5 +124,6 @@ class Pipe:
                 }
             )
 
+        # Emite estado de completado
         await self.emit_status(__event_emitter__, "info", "Complete", True)
         return n8n_response
