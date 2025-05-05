@@ -21,8 +21,8 @@ services:
     container_name: postgres-container
     image: pgvector/pgvector:0.8.0-pg17
     environment:
-      POSTGRES_USER: david
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: <usuario>
+      POSTGRES_PASSWORD: <contraseña>
       POSTGRES_DB: n8n_db
     ports: 
       - "5432:5432"
