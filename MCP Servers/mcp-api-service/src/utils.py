@@ -3,7 +3,7 @@ import os
 
 class ApiService:
 
-    BASE_URL = os.getenv("BASE_URL","")
+    BASE_URL = os.getenv("BASE_URL","https://catfact.ninja/")
 
     @staticmethod
     def build_url(endpoint: str) -> str:
@@ -19,6 +19,7 @@ class ApiService:
         endpoint = endpoint.lstrip("/")  # quitar '/' inicial si lo tiene
         return base + endpoint
 
+
     @staticmethod
     async def fetch_data(url: str) -> str:
         """
@@ -28,3 +29,4 @@ class ApiService:
             response = await client.get(url)
             response.raise_for_status()
             return response.text
+        
