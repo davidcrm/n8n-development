@@ -28,15 +28,16 @@ mcp = FastMCP(
 )
 
 @mcp.tool()
-async def consultar_api(ctx: Context, url: str) -> str:
-    """
-    Consulta un endpoint de una API externa y devuelve el contenido como texto.
-    """
+async def consultar_api(ctx: Context, endpoint: str) -> str:
     try:
+        # Obtiene el endpoint y construye la url
+        url = ApiService.build_url(endpoint)
+        # hace la petición con esa url
         data = await ApiService.fetch_data(url)
         return f"Respuesta de la API:\n{data}"
     except Exception as e:
         return f"Error al consultar la API: {str(e)}"
+
 
 async def main():
     transport = os.getenv("TRANSPORT", "sse")

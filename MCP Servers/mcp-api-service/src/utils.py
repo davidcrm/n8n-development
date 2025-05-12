@@ -1,6 +1,24 @@
 import httpx
+import os
 
 class ApiService:
+
+    BASE_URL = os.getenv("BASE_URL","")
+
+    @staticmethod
+    def build_url(endpoint: str) -> str:
+        """
+        Construye la URL completa concatenando la base y el endpoint.
+        """
+        # Asegurarse de que hay exactamente una sola '/' entre base y endpoint
+        if not ApiService.BASE_URL.endswith("/"):
+            base = ApiService.BASE_URL + "/"
+        else:
+            base = ApiService.BASE_URL
+
+        endpoint = endpoint.lstrip("/")  # quitar '/' inicial si lo tiene
+        return base + endpoint
+
     @staticmethod
     async def fetch_data(url: str) -> str:
         """
