@@ -179,7 +179,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-definiremos una función `main` asíncrona que determinará el tipo de transporte para ejecutar el servidor MCP. Utiliza la variable de entorno `TRANSPORT` para decidir si usar el transporte `sse` (Server-Sent Events) o `stdio` (entrada/salida estándar). Dependiendo del valor de `TRANSPORT` (Si está vacío es `sse` por defecto), ejecuta el servidor MCP usando `mcp.run_sse_async()` o `mcp.run_stdio_async()`. Finalmente, al ejecutar el script, se llama a `asyncio.run(main())` para iniciar la ejecución asincrónica del servidor.
+definiremos una función `main` asíncrona que determinará el tipo de transporte para ejecutar el servidor MCP. Utiliza la variable de entorno `TRANSPORT` para decidir si usar el transporte `sse` (Server-Sent Events) o `stdio` (entrada/salida estándar). Dependiendo del valor de `TRANSPORT` (Si está vacío es `sse` por defecto), ejecuta el servidor MCP usando `mcp.run_sse_async()` o `mcp.run_stdio_async()`. Finalmente, al ejecutar el script, se llama a `asyncio.run(main())` para iniciar la ejecución asíncrona del servidor.
 
 ## Archivo utils.py
 En este archivo creamos un servicio para exportar el pdf y abstraer esa lógica del servidor principal.
