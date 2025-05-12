@@ -11,7 +11,7 @@ services:
 
   ollama:
     container_name: ollama-container
-    image: ollama/ollama
+    image: ollama/ollama:latest
     ports:
       - "11434:11434"
     networks:
