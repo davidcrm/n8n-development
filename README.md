@@ -56,7 +56,7 @@ El flujo lo activa o bien un chat de prueba de n8n o un nodo webhook que está c
 > El segundo caso solo ocurre con el primer mensaje de cada conversación.
 > El modelo local usado para el chat es `qwen2.5:7b-instruct-q4_K_M.`[^2]
 
-[^2]: Se puede modificar este modelo para que permita más tokens, ya que el flujo requiere de bastantes con estos dos comandos: ![image](https://github.com/user-attachments/assets/8efbc6f6-d871-440f-aa4e-d221eda501ba)
+[^2]: Se puede modificar este modelo para que permita más tokens, ya que el flujo requiere de bastantes con estos dos comandos: \n `echo "FROM qwen2.5:7b-instruct-q4_K_M\n\nPARAMETER num_ctx 8096" > Modelfile` \n ``
 
 - 4.1. Herramientas y características del Agente.
 El flujo cuenta con varios modelos de IA diferentes, en este caso para hacer pruebas tengo OpenAI y Ollama; una memoria en base de datos SQL que guarda la información y los mensajes de cada interacción con el chat; Un set de herramientas SQL para facilitar el acceso a los archivos:
